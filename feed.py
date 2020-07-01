@@ -25,4 +25,8 @@ class FeedCli:
         return self.followed_by_user[username]
 
     def get_wall_for(self, username: str):
-        return ["Sup?"]
+        wall_messages = []
+        for user in self.followed_by_user[username]:
+            wall_messages += self.messages_by_user[user]
+        wall_messages.reverse()
+        return wall_messages
