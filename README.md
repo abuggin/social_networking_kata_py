@@ -42,7 +42,7 @@ Thanks for using this awesome program, with great power comes great responsibili
 - [ ] `<username> follow <username1>`
   - [x] create relationship between users
     - [x] if one of the two usernames is missing, not a big deal, we make an empty link, we can always restrict later
-    - [ ] what about users following themselves? I guess it's a bit narcisistic but, sure, it doesn't change much.
+    - [ ] what about users following themselves? I guess it's a bit narcisistic but, sure, it doesn't change much. should work
 - [ ] `<username> wall`
   - [x] display post of users followed by `<username>`
   - [ ] sort them by most recent first

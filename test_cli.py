@@ -45,6 +45,10 @@ class TestCliFeed(unittest.TestCase):
         feed.post_message(followed, old_msg)
         res = feed.get_wall_for(follower)
         self.assertEqual([old_msg], res)
+        new_msg = "Busy day copy pasting from stackoverflow"
+        feed.post_message(followed, new_msg)
+        res = feed.get_wall_for(follower)
+        self.assertEqual([new_msg, old_msg], res)
 
 
 if __name__ == "__main__":
