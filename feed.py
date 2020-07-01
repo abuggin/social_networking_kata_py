@@ -3,14 +3,13 @@ from collections import defaultdict
 
 class FeedCli:
     def __init__(self):
-        self.usernames = []
         self.user_to_messages = defaultdict(list)
 
     def add_user(self, name: str):
-        self.usernames.append(name)
+        self.user_to_messages[name]
 
     def get_usernames(self):
-        return self.usernames
+        return list(self.user_to_messages.keys())
 
     def post_message(self, username, message):
         self.user_to_messages[username].append(message)
