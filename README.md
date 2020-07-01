@@ -18,3 +18,16 @@ EXAMPLE COMMANDS:
     These posts are sorted by the most recent first.
 
 Thanks for using this awesome program, with great power comes great responsibility.
+
+---
+
+## TODO
+
+- [ ] `<username> -> <message>` write command
+  - [ ] create user
+  - [ ] save message to user
+- [ ] `<username>` display user posts
+- [ ] `<username> follow <username1>`
+  - [ ] create relationship between users
+- [ ] `<username> wall`
+  - [ ] display post of users followed by `<username>`
