@@ -25,14 +25,14 @@ class TestCliFeed(unittest.TestCase):
 
     def test_follow_relationship(self):
         feed = FeedCli()
-        feed.follow(username="John", wants_to_follow_username="Jamie")
+        feed.follow(follower="John", followed="Jamie")
         res = feed.users_followed_by(username="John")
         self.assertEqual({"Jamie"}, res)
 
     def test_follow_another_relationship(self):
         feed = FeedCli()
-        feed.follow(username="John", wants_to_follow_username="Jamie")
-        feed.follow(username="John", wants_to_follow_username="Jess")
+        feed.follow(follower="John", followed="Jamie")
+        feed.follow(follower="John", followed="Jess")
         res = feed.users_followed_by(username="John")
         self.assertSetEqual({"Jess", "Jamie"}, res)
 
