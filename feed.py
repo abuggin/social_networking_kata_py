@@ -20,5 +20,5 @@ class FeedCli:
     def follow(self, username: str, wants_to_follow_username: str):
         pass
 
-    def get_who_this_user_is_following(self, username: str):
+    def users_followed_by(self, username: str):
         return ["Jamie"]
