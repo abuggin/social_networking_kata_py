@@ -24,12 +24,23 @@ Thanks for using this awesome program, with great power comes great responsibili
 ## TODO
 
 - [ ] `<username> -> <message>` write command
-  - [ ] create user
-    - what happens when you create multiple times the same username?
-    - given the use case provided in the example, it should be transparent if the username exists or not.
-  - [ ] save message to user
+  - [x] create user
+    - [x] what happens when you create multiple times the same username?
+      - given the use case provided in the example, it should be transparent if the username exists or not.
+      - aka don't return error if operation succeed or not
+  - [x] save message to user
+  - [ ] cli interface
 - [ ] `<username>` display user posts
+  - [x] already implemented when saving messages by picking dictionary datastructure
+  - [x] what happens when the username is not known to the system? two options come to mind
+    - inform the users that the system doesn't have such a username
+      - this one is more explicit, but not requested, so I'll post-pone the implementation for now
+    - return an empty list of posts
+      - this make sense as well so I'll go with this one
+      - [x] decision documented with a test
+  - [ ] cli interface
 - [ ] `<username> follow <username1>`
   - [ ] create relationship between users
+    - [ ] if one of the two usernames is missing, not a big deal, we make an empty link, we can always restrict later
 - [ ] `<username> wall`
   - [ ] display post of users followed by `<username>`

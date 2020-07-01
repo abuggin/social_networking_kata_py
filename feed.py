@@ -16,3 +16,9 @@ class FeedCli:
 
     def get_messages_of(self, username):
         return self.user_to_messages[username]
+
+    def follow(self, username: str, wants_to_follow_username: str):
+        pass
+
+    def get_who_this_user_is_following(self, username: str):
+        return ["Jamie"]
