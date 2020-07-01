@@ -4,6 +4,7 @@ from collections import defaultdict
 class FeedCli:
     def __init__(self):
         self.user_to_messages = defaultdict(list)
+        self.user_follows = defaultdict(set)
 
     def add_user(self, name: str):
         self.user_to_messages[name]
@@ -18,7 +19,7 @@ class FeedCli:
         return self.user_to_messages[username]
 
     def follow(self, username: str, wants_to_follow_username: str):
-        pass
+        self.user_follows[username].add(wants_to_follow_username)
 
     def users_followed_by(self, username: str):
-        return ["Jamie"]
+        return self.user_follows[username]

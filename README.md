@@ -40,7 +40,8 @@ Thanks for using this awesome program, with great power comes great responsibili
       - [x] decision documented with a test
   - [ ] cli interface
 - [ ] `<username> follow <username1>`
-  - [ ] create relationship between users
-    - [ ] if one of the two usernames is missing, not a big deal, we make an empty link, we can always restrict later
+  - [x] create relationship between users
+    - [x] if one of the two usernames is missing, not a big deal, we make an empty link, we can always restrict later
 - [ ] `<username> wall`
   - [ ] display post of users followed by `<username>`
+  - [ ] sort them by most recent first
