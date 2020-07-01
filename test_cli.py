@@ -36,6 +36,16 @@ class TestCliFeed(unittest.TestCase):
         res = feed.users_followed_by(username="John")
         self.assertSetEqual({"Jess", "Jamie"}, res)
 
+    def test_get_wall_messages_of_followed_user(self):
+        feed = FeedCli()
+        follower = "a"
+        followed = "b"
+        feed.follow(follower=follower, followed=followed)
+        old_msg = "Sup?"
+        feed.post_message(followed, old_msg)
+        res = feed.get_wall_for(follower)
+        self.assertEqual([old_msg], res)
+
 
 if __name__ == "__main__":
     unittest.main()

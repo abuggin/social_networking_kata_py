@@ -23,3 +23,6 @@ class FeedCli:
 
     def users_followed_by(self, username: str):
         return self.followed_by_user[username]
+
+    def get_wall_for(self, username: str):
+        return ["Sup?"]
