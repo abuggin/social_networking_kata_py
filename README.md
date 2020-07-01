@@ -25,6 +25,8 @@ Thanks for using this awesome program, with great power comes great responsibili
 
 - [ ] `<username> -> <message>` write command
   - [ ] create user
+    - what happens when you create multiple times the same username?
+    - given the use case provided in the example, it should be transparent if the username exists or not.
   - [ ] save message to user
 - [ ] `<username>` display user posts
 - [ ] `<username> follow <username1>`
