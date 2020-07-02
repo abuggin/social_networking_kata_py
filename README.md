@@ -33,7 +33,7 @@ Thanks for using this awesome program, with great power comes great responsibili
     - [ ] action: write
     - [ ] actor: username
     - [ ] arg dependent on the action: message
-- [ ] `<username>` display user posts
+- [x] `<username>` display user posts
   - [x] already implemented when saving messages by picking dictionary datastructure
   - [x] what happens when the username is not known to the system? two options come to mind
     - inform the users that the system doesn't have such a username
@@ -41,17 +41,17 @@ Thanks for using this awesome program, with great power comes great responsibili
     - return an empty list of posts
       - this make sense as well so I'll go with this one
       - [x] decision documented with a test
-  - [ ] cli interface
-    - [ ] action: display_own_posts
-    - [ ] actor: username
-    - [ ] arg dependent on the action: None
+  - [x] cli interface
+    - [x] action: display_own_posts
+    - [x] actor: username
+    - [x] arg dependent on the action: None
 - [ ] `<username> follow <username1>`
   - [x] create relationship between users
     - [x] if one of the two usernames is missing, not a big deal, we make an empty link, we can always restrict later
-  - [ ] cli interface
-    - [ ] action: follow
-      - [ ] actor: username
-      - [ ] arg dependent on the action: username1
+  - [x] cli interface
+    - [x] action: follow
+    - [x] actor: username
+    - [x] arg dependent on the action: username1
 - [ ] `<username> wall`
   - [x] display post of users followed by `<username>`
   - [x] sort them by most recent first

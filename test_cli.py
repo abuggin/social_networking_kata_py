@@ -46,7 +46,7 @@ class TestCliFeed(unittest.TestCase):
     def test_parse_follow_command(self):
         cmd_str = "Josh follows Bob"
         cmd = Command(Action.FOLLOW,"Josh","Bob")
-        self.assertEqual(cmd,Cli().parse(cmd_str))
+        self.assertEqual(cmd,Cli(None).parse(cmd_str))
 
 if __name__ == "__main__":
     unittest.main()

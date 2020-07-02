@@ -3,7 +3,7 @@ from command import Command, Action
 
 
 class Cli:
-    def __init__(self, feed: FeedCli = None):
+    def __init__(self, feed: FeedCli):
         self.feed = feed
 
     def run(self, command: Command):
