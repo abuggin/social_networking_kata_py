@@ -1,6 +1,6 @@
 from feed import FeedCli
 from cli import Cli
-from command import Command
+from command import Command, Action
 import unittest
 from unittest import mock
 
@@ -25,19 +25,23 @@ class TestCliFeed(unittest.TestCase):
         cli = Cli(None)
         res = cli.parse("Josh -> Hello!")
         parsed_cmd = Command(
-            action="write", actor="Josh", arg_dependant_on_action="Hello!"
+            action=Action.WRITE, actor="Josh", arg_dependant_on_action="Hello!"
         )
         self.assertEqual(parsed_cmd, res)
 
     def test_hash_command(self):
-        cmd = Command(action="write", actor="Josh", arg_dependant_on_action="Hello!")
-        cmd_1 = Command(action="write", actor="Josh", arg_dependant_on_action="Hello!")
+        cmd = Command(
+            action=Action.WRITE, actor="Josh", arg_dependant_on_action="Hello!"
+        )
+        cmd_1 = Command(
+            action=Action.WRITE, actor="Josh", arg_dependant_on_action="Hello!"
+        )
         self.assertEqual(cmd, cmd_1)
         self.assertEqual(hash(cmd), hash(cmd_1))
 
     def test_parse_display_command(self):
         parsed_cmd = Command(
-            action="display_own_posts", actor="Jonny", arg_dependant_on_action=None
+            action=Action.DISPLAY_OWN_POSTS, actor="Jonny", arg_dependant_on_action=None
         )
         self.assertEqual(parsed_cmd, Cli(None).parse("Jonny"))
 
