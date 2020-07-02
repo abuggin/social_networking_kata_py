@@ -42,7 +42,7 @@ Thanks for using this awesome program, with great power comes great responsibili
       - this make sense as well so I'll go with this one
       - [x] decision documented with a test
   - [ ] cli interface
-    - [ ] action: own_posts
+    - [ ] action: display_own_posts
     - [ ] actor: username
     - [ ] arg dependent on the action: None
 - [ ] `<username> follow <username1>`
@@ -57,6 +57,6 @@ Thanks for using this awesome program, with great power comes great responsibili
   - [x] sort them by most recent first
   - [x] include own posts
   - [ ] cli interface
-    - [ ] action: relevant_posts
+    - [ ] action: display_relevant_posts
     - [ ] actor: username
     - [ ] arg dependent on the action: None
