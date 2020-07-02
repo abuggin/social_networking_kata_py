@@ -10,9 +10,6 @@ class FeedCli:
         self.messages_of_user = defaultdict(list)
         self.followed_by_user = defaultdict(set)
 
-    def get_usernames(self):
-        return list(self.messages_of_user.keys())
-
     def post_message(self, username, message):
         timeAndMsg = TimeAndMessage(time(), message)
         self.messages_of_user[username].append(timeAndMsg)
