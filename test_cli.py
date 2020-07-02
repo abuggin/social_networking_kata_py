@@ -28,5 +28,12 @@ class TestCliFeed(unittest.TestCase):
         )
         self.assertEqual(parsed_cmd, res)
 
+    def test_hash_command(self):
+        cmd = Command(action="write", actor="Josh", arg_dependant_on_action="Hello!")
+        cmd_1 = Command(action="write", actor="Josh", arg_dependant_on_action="Hello!")
+        self.assertEqual(cmd, cmd_1)
+        self.assertEqual(hash(cmd), hash(cmd_1))
+
+
 if __name__ == "__main__":
     unittest.main()
