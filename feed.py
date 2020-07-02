@@ -10,10 +10,6 @@ class FeedCli:
         self.messages_of_user = defaultdict(list)
         self.followed_by_user = defaultdict(set)
 
-    def add_user(self, name: str):
-        # deprecated
-        self.messages_of_user[name]
-
     def get_usernames(self):
         return list(self.messages_of_user.keys())
 
