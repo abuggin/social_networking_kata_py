@@ -1,15 +1,24 @@
 # CLI Social Network
 
-## How to
+## What is it
 
-### Run program
+Kata exercise on TDD and an excuse for me to some active learning in Python.
+
+- _Red, Green, Refactor prefixes to commit_ are not going to happen in a real codebase.
+- project structure is very flat
+  - I think that being a very simple problem there is no harm in having everything very reachable.
+- any feedback is welcome
+
+### How to Run program
 
 `python main.py`
 
-### Run tests
+### How to Run tests
 
 Run all test in folder by:
 `python -m unittest discover .`
+
+---
 
 ## Description of the Kata
 
@@ -30,6 +39,8 @@ EXAMPLE COMMANDS:
     This command will show all the posts the user Josh and all of the users they are following.
     These posts are sorted by the most recent first.
 
+Assume valid input
+
 ---
 
 ## TODO
@@ -46,9 +57,6 @@ EXAMPLE COMMANDS:
       - aka don't return error if operation succeed or not
   - [x] save message to user
   - [x] cli interface
-    - [x] action: write
-    - [x] actor: username
-    - [x] arg dependent on the action: message
 - [x] `<username>` display user posts
   - [x] already implemented when saving messages by picking dictionary datastructure
   - [x] what happens when the username is not known to the system? two options come to mind
@@ -58,23 +66,35 @@ EXAMPLE COMMANDS:
       - this make sense as well so I'll go with this one
       - [x] decision documented with a test
   - [x] cli interface
-    - [x] action: display_own_posts
-    - [x] actor: username
-    - [x] arg dependent on the action: None
 - [x] `<username> follow <username1>`
   - [x] create relationship between users
     - [x] if one of the two usernames is missing, not a big deal, we make an empty link, we can always restrict later
   - [x] cli interface
-    - [x] action: follow
-    - [x] actor: username
-    - [x] arg dependent on the action: username1
 - [x] `<username> wall`
   - [x] display post of users followed by `<username>`
   - [x] sort them by most recent first
   - [x] include own posts
   - [x] cli interface
-    - [x] action: display_relevant_posts
-    - [x] actor: username
-    - [x] arg dependent on the action: None
 
 ---
+
+## TODO for fun
+
+- [ ] split message id and message body
+  - [ ] store message body separately in a db
+- [ ] fix time complexity of feed creation
+  - [ ] pagination of feed creation
+
+---
+
+## Feed creation time complexity
+
+This is a toy example but we can still find a better time complexity for the algorithm.
+
+Right now, there are no limits to the size of a `wall`/feed generation call.
+
+In a real life scenario, we can't pull all the data from a database of all the _comments_ of all the _users_ that the requesting user is following.
+
+### Half baked idea
+
+[omissis]
