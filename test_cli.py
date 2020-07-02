@@ -1,5 +1,5 @@
 from feed import FeedCli
-from cli import Cli
+from cli import Cli, Command
 import unittest
 from unittest import mock
 
@@ -20,6 +20,13 @@ class TestCliFeed(unittest.TestCase):
         spy.post_message.assert_called_once_with(username="Josh", message="Hello!")
         spy.get_messages_of.assert_not_called()
 
+    def test_parse_command(self):
+        cli = Cli(None)
+        res = cli.parse("Josh -> Hello!")
+        parsed_cmd = Command(
+            action="write", actor="Josh", arg_dependant_on_action="Hello!"
+        )
+        self.assertEqual(parsed_cmd, res)
 
 if __name__ == "__main__":
     unittest.main()

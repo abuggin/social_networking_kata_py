@@ -1,5 +1,6 @@
+from feed import FeedCli
 class Cli:
-    def __init__(self, feed):
+    def __init__(self, feed: FeedCli):
         self.feed = feed
 
     def run(self, command):
@@ -10,3 +11,11 @@ class Cli:
             self.feed.post_message(username=username,message=message)
         else:
             self.feed.get_messages_of(command)
+
+    def parse(self, command):
+        pass
+
+
+class Command:
+    def __init__(self, action, actor, arg_dependant_on_action):
+        pass
