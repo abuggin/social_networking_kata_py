@@ -1,4 +1,5 @@
 from feed import FeedCli
+from cli import Cli
 import unittest
 from unittest import mock
 

@@ -60,3 +60,8 @@ Thanks for using this awesome program, with great power comes great responsibili
     - [ ] action: display_relevant_posts
     - [ ] actor: username
     - [ ] arg dependent on the action: None
+
+---
+
+Run all test in folder by:
+`python -m unittest discover .`
