@@ -1,5 +1,18 @@
 # CLI Social Network
 
+## How to
+
+### Run program
+
+`python main.py`
+
+### Run tests
+
+Run all test in folder by:
+`python -m unittest discover .`
+
+## Description of the Kata
+
 This application allows you have a mini cli social network on your device!
 
 EXAMPLE COMMANDS:
@@ -21,9 +34,11 @@ EXAMPLE COMMANDS:
 
 ## TODO
 
-- [ ] make it interactive
-  - [ ] run on main
+- [ ] check if runs on another machine as well
+- [x] make it interactive
+  - [x] run on main
   - [ ] display output
+    - [ ] could improve display with author name and time, since I already have both
 - [x] `<username> -> <message>` write command
   - [x] create user
     - [x] what happens when you create multiple times the same username?
@@ -63,6 +78,3 @@ EXAMPLE COMMANDS:
     - [x] arg dependent on the action: None
 
 ---
-
-Run all test in folder by:
-`python -m unittest discover .`
