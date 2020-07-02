@@ -1,5 +1,6 @@
 from feed import FeedCli
-from cli import Cli, Command
+from cli import Cli
+from command import Command
 import unittest
 from unittest import mock
 
@@ -9,14 +10,14 @@ class TestCliFeed(unittest.TestCase):
         str_cmd = "Josh"
         spy = mock.Mock(wraps=FeedCli())
         cli = Cli(spy)
-        cli.run(str_cmd)
+        cli.run(cli.parse(str_cmd))
         spy.get_messages_of.assert_called()
 
     def test_post_message(self):
         str_cmd = "Josh -> Hello!"
         spy = mock.Mock(wraps=FeedCli())
         cli = Cli(spy)
-        cli.run(str_cmd)
+        cli.run(cli.parse(str_cmd))
         spy.post_message.assert_called_once_with(username="Josh", message="Hello!")
         spy.get_messages_of.assert_not_called()
 
