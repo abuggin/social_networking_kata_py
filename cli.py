@@ -1,9 +1,9 @@
-from feed import FeedCli
+from feed import Feed
 from command import Command, Action
 
 
 class Cli:
-    def __init__(self, feed: FeedCli):
+    def __init__(self, feed: Feed):
         self.feed = feed
 
     def run(self, command: Command):

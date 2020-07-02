@@ -1,4 +1,4 @@
-from feed import FeedCli
+from feed import Feed
 from cli import Cli
 from command import Command, Action
 import unittest
@@ -14,7 +14,7 @@ class TestCliFeed(unittest.TestCase):
     )
 
     def test_run_display_own_msg(self):
-        spy = mock.Mock(wraps=FeedCli())
+        spy = mock.Mock(wraps=Feed())
         cli = Cli(spy)
         cli.run(self.jonny_display_cmd)
         spy.get_messages_of.assert_called()
@@ -24,7 +24,7 @@ class TestCliFeed(unittest.TestCase):
         self.assertEqual(parsed_cmd, Cli(None).parse("Jonny"))
 
     def test_run_write(self):
-        spy = mock.Mock(wraps=FeedCli())
+        spy = mock.Mock(wraps=Feed())
         cli = Cli(spy)
         cli.run(self.josh_hello_cmd)
         spy.post_message.assert_called_once_with(username="Josh", message="Hello!")
@@ -37,7 +37,7 @@ class TestCliFeed(unittest.TestCase):
         self.assertEqual(parsed_cmd, res)
 
     def test_run_follow_cmd(self):
-        spy = mock.Mock(wraps=FeedCli())
+        spy = mock.Mock(wraps=Feed())
         cli = Cli(spy)
         cli.run(Command(Action.FOLLOW, "Josh", "Bob"))
         spy.follow.assert_called_once_with(follower="Josh", followed="Bob")
@@ -49,7 +49,7 @@ class TestCliFeed(unittest.TestCase):
         self.assertEqual(cmd, Cli(None).parse(cmd_str))
 
     def test_run_follow_cmd(self):
-        spy = mock.Mock(wraps=FeedCli())
+        spy = mock.Mock(wraps=Feed())
         cli = Cli(spy)
         cli.run(Command(Action.DISPLAY_RELEVANT_POSTS, "Josh", None))
         spy.get_wall_for.assert_called_once_with("Josh")

@@ -5,7 +5,7 @@ from collections import namedtuple
 TimeAndMessage = namedtuple("TimeAndMessage", ("time", "message"))
 
 
-class FeedCli:
+class Feed:
     def __init__(self):
         self.messages_of_user = defaultdict(list)
         self.followed_by_user = defaultdict(set)

@@ -1,11 +1,11 @@
 from cli import Cli
-from feed import FeedCli
+from feed import Feed
 import unittest
 
 
 class TestE2E(unittest.TestCase):
     def test_e2e(self):
-        cli = Cli(FeedCli())
+        cli = Cli(Feed())
         cmds = [
             "Josh -> As Josh used to say",
             "Josh",
