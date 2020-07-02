@@ -24,10 +24,10 @@ class FeedCli:
         return self.followed_by_user[username]
 
     def get_wall_for(self, username: str):
-        wall_messages_relevant_for_this_user = self.messages_of_user[username].copy()
-        people_followed_by_user = self.followed_by_user[username]
-        for user in people_followed_by_user:
-            wall_messages_relevant_for_this_user += self.messages_of_user[user]
-        byTime = lambda t: t.time
-        wall_messages_relevant_for_this_user.sort(key=byTime, reverse=True)
-        return [t.message for t in wall_messages_relevant_for_this_user]
+        wall_messages_for_this_user = self.messages_of_user[username].copy()
+        all_people_followed_by_user = self.followed_by_user[username]
+        for a_followed_user in all_people_followed_by_user:
+            wall_messages_for_this_user += self.messages_of_user[a_followed_user]
+        by_time = lambda t: t.time
+        sorted_messages_by_time = sorted(wall_messages_for_this_user, key=by_time, reverse=True)
+        return [t.message for t in sorted_messages_by_time]
