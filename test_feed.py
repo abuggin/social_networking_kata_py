@@ -2,7 +2,7 @@ from feed import FeedCli
 import unittest
 
 
-class TestCliFeed(unittest.TestCase):
+class TestFeed(unittest.TestCase):
     def test_link_message_to_user(self):
         feed = FeedCli()
         username = "John"

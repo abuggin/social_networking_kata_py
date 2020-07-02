@@ -30,6 +30,9 @@ Thanks for using this awesome program, with great power comes great responsibili
       - aka don't return error if operation succeed or not
   - [x] save message to user
   - [ ] cli interface
+    - [ ] action: write
+    - [ ] actor: username
+    - [ ] arg dependent on the action: message
 - [ ] `<username>` display user posts
   - [x] already implemented when saving messages by picking dictionary datastructure
   - [x] what happens when the username is not known to the system? two options come to mind
@@ -39,12 +42,21 @@ Thanks for using this awesome program, with great power comes great responsibili
       - this make sense as well so I'll go with this one
       - [x] decision documented with a test
   - [ ] cli interface
+    - [ ] action: own_posts
+    - [ ] actor: username
+    - [ ] arg dependent on the action: None
 - [ ] `<username> follow <username1>`
   - [x] create relationship between users
     - [x] if one of the two usernames is missing, not a big deal, we make an empty link, we can always restrict later
   - [ ] cli interface
+    - [ ] action: follow
+      - [ ] actor: username
+      - [ ] arg dependent on the action: username1
 - [ ] `<username> wall`
   - [x] display post of users followed by `<username>`
   - [x] sort them by most recent first
   - [x] include own posts
   - [ ] cli interface
+    - [ ] action: relevant_posts
+    - [ ] actor: username
+    - [ ] arg dependent on the action: None
