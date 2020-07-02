@@ -3,4 +3,10 @@ class Cli:
         self.feed = feed
 
     def run(self, command):
-        self.feed.get_messages_of(command)
+        idx_arrow = command.find("->")
+        if idx_arrow != -1:
+            username = command[:idx_arrow]
+            message = command[idx_arrow+1:]
+            self.feed.post_message(username,message)
+        else:
+            self.feed.get_messages_of(command)
