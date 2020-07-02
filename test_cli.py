@@ -50,6 +50,21 @@ class TestCliFeed(unittest.TestCase):
         res = feed.get_wall_for(follower)
         self.assertEqual([new_msg, old_msg], res)
 
+    def test_get_wall_msgs_when_following_multiple_users(self):
+        feed = FeedCli()
+        follower = "Alice"
+        followed_b = "Bob"
+        followed_c = "Charlie"
+        feed.follow(follower=follower, followed=followed_b)
+        feed.follow(follower=follower, followed=followed_c)
+        old_msg_b = "Sup?"
+        feed.post_message(followed_b, old_msg_b)
+        old_msg_c = "Not much"
+        feed.post_message(followed_c, old_msg_c)
+        new_msg = "Busy day copy pasting from stackoverflow"
+        feed.post_message(followed_b, new_msg)
+        res = feed.get_wall_for(follower)
+        self.assertEqual([new_msg, old_msg_c, old_msg_b], res)
 
 if __name__ == "__main__":
     unittest.main()
