@@ -1,6 +1,7 @@
 from feed import FeedCli
 from dataclasses import dataclass
 
+
 class Cli:
     def __init__(self, feed: FeedCli):
         self.feed = feed
@@ -14,10 +15,18 @@ class Cli:
         else:
             self.feed.get_messages_of(command)
 
-    def parse(self, command):
-        return Command("write","Josh","Hello!")
+    def parse(self, command_str):
+        username = command_str.split()[0]
+        if username == command_str:
+            command = "display_own_posts"
+            args = None
+        else:
+            command = "write"
+            args = "Hello!"
+        return Command(command, username, args)
 
-@dataclass(frozen= True)
+
+@dataclass(frozen=True)
 class Command:
     action: str
     actor: str

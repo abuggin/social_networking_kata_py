@@ -36,7 +36,7 @@ class TestCliFeed(unittest.TestCase):
 
     def test_parse_display_command(self):
         parsed_cmd = Command(
-            action="display_own_posts", actor="Jonny", arg_dependant_on_action="None"
+            action="display_own_posts", actor="Jonny", arg_dependant_on_action=None
         )
         self.assertEqual(parsed_cmd, Cli(None).parse("Jonny"))
 
