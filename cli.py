@@ -8,22 +8,22 @@ class Cli:
 
     def run(self, command: Command):
         if command.action == Action.WRITE:
-            self.feed.post_message(
+            return self.feed.post_message(
                 username=command.actor, message=command.arg_dependant_on_action
             )
         elif command.action == Action.FOLLOW:
-            self.feed.follow(
+            return self.feed.follow(
                 follower=command.actor, followed=command.arg_dependant_on_action
             )
         elif command.action == Action.DISPLAY_RELEVANT_POSTS:
-            self.feed.get_wall_for(command.actor)
+            return self.feed.get_wall_for(command.actor)
         else:
-            self.feed.get_messages_of(command.actor)
+            return self.feed.get_messages_of(command.actor)
 
     def parse(self, command_str):
         splitted = command_str.split()
         username = splitted[0]
-        args = "".join(splitted[2:])
+        args = " ".join(splitted[2:])
         if username == command_str:
             command = Action.DISPLAY_OWN_POSTS
         elif splitted[1] == "follows":

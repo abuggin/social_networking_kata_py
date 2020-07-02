@@ -17,22 +17,23 @@ EXAMPLE COMMANDS:
     This command will show all the posts the user Josh and all of the users they are following.
     These posts are sorted by the most recent first.
 
-Thanks for using this awesome program, with great power comes great responsibility.
-
 ---
 
 ## TODO
 
-- [ ] `<username> -> <message>` write command
+- [ ] make it interactive
+  - [ ] run on main
+  - [ ] display output
+- [x] `<username> -> <message>` write command
   - [x] create user
     - [x] what happens when you create multiple times the same username?
       - given the use case provided in the example, it should be transparent if the username exists or not.
       - aka don't return error if operation succeed or not
   - [x] save message to user
-  - [ ] cli interface
-    - [ ] action: write
-    - [ ] actor: username
-    - [ ] arg dependent on the action: message
+  - [x] cli interface
+    - [x] action: write
+    - [x] actor: username
+    - [x] arg dependent on the action: message
 - [x] `<username>` display user posts
   - [x] already implemented when saving messages by picking dictionary datastructure
   - [x] what happens when the username is not known to the system? two options come to mind
@@ -45,21 +46,21 @@ Thanks for using this awesome program, with great power comes great responsibili
     - [x] action: display_own_posts
     - [x] actor: username
     - [x] arg dependent on the action: None
-- [ ] `<username> follow <username1>`
+- [x] `<username> follow <username1>`
   - [x] create relationship between users
     - [x] if one of the two usernames is missing, not a big deal, we make an empty link, we can always restrict later
   - [x] cli interface
     - [x] action: follow
     - [x] actor: username
     - [x] arg dependent on the action: username1
-- [ ] `<username> wall`
+- [x] `<username> wall`
   - [x] display post of users followed by `<username>`
   - [x] sort them by most recent first
   - [x] include own posts
-  - [ ] cli interface
-    - [ ] action: display_relevant_posts
-    - [ ] actor: username
-    - [ ] arg dependent on the action: None
+  - [x] cli interface
+    - [x] action: display_relevant_posts
+    - [x] actor: username
+    - [x] arg dependent on the action: None
 
 ---
 
