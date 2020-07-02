@@ -6,6 +6,7 @@ class Action(Enum):
     WRITE = 1
     DISPLAY_OWN_POSTS = 2
     FOLLOW = 3
+    DISPLAY_RELEVANT_POSTS = 4
 
 
 @dataclass(frozen=True)

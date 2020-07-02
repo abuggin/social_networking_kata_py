@@ -17,13 +17,13 @@ class Cli:
     def parse(self, command_str):
         splitted = command_str.split()
         username = splitted[0]
+        args = ''.join(splitted[2:]) 
         if username == command_str:
             command = Action.DISPLAY_OWN_POSTS
-            args = None
         elif splitted[1] == "follows":
             command = Action.FOLLOW
-            args = ''.join(splitted[2:])
+        elif splitted[1] == "wall":
+            command = Action.DISPLAY_RELEVANT_POSTS
         else:
             command = Action.WRITE
-            args = "Hello!"
-        return Command(command, username, args)
+        return Command(command, username, args if bool(args) else None)

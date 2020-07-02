@@ -45,8 +45,14 @@ class TestCliFeed(unittest.TestCase):
 
     def test_parse_follow_command(self):
         cmd_str = "Josh follows Bob"
-        cmd = Command(Action.FOLLOW,"Josh","Bob")
-        self.assertEqual(cmd,Cli(None).parse(cmd_str))
+        cmd = Command(Action.FOLLOW, "Josh", "Bob")
+        self.assertEqual(cmd, Cli(None).parse(cmd_str))
+
+    def test_parse_wall_command(self):
+        cmd_str = "Josh wall"
+        cmd = Command(Action.DISPLAY_RELEVANT_POSTS, "Josh", None)
+        self.assertEqual(cmd, Cli(None).parse(cmd_str))
+
 
 if __name__ == "__main__":
     unittest.main()
