@@ -15,10 +15,14 @@ class Cli:
             self.feed.get_messages_of(command.actor)
 
     def parse(self, command_str):
-        username = command_str.split()[0]
+        splitted = command_str.split()
+        username = splitted[0]
         if username == command_str:
             command = Action.DISPLAY_OWN_POSTS
             args = None
+        elif splitted[1] == "follows":
+            command = Action.FOLLOW
+            args = ''.join(splitted[2:])
         else:
             command = Action.WRITE
             args = "Hello!"

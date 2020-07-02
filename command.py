@@ -5,6 +5,7 @@ from enum import Enum
 class Action(Enum):
     WRITE = 1
     DISPLAY_OWN_POSTS = 2
+    FOLLOW = 3
 
 
 @dataclass(frozen=True)
