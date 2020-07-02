@@ -17,7 +17,7 @@ class TestCliFeed(unittest.TestCase):
         spy = mock.Mock(wraps=FeedCli())
         cli = Cli(spy)
         cli.run(str_cmd)
-        spy.post_message.assert_called()
+        spy.post_message.assert_called_once_with(username="Josh", message="Hello!")
         spy.get_messages_of.assert_not_called()
 
 
