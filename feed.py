@@ -27,7 +27,7 @@ class FeedCli:
         return self.followed_by_user[username]
 
     def get_wall_for(self, username: str):
-        wall_messages_relevant_for_this_user = []
+        wall_messages_relevant_for_this_user = self.messages_of_user[username].copy()
         people_followed_by_user = self.followed_by_user[username]
         for user in people_followed_by_user:
             wall_messages_relevant_for_this_user += self.messages_of_user[user]

@@ -45,5 +45,6 @@ Thanks for using this awesome program, with great power comes great responsibili
   - [ ] cli interface
 - [ ] `<username> wall`
   - [x] display post of users followed by `<username>`
-  - [ ] sort them by most recent first
-  - [ ] include own posts
+  - [x] sort them by most recent first
+  - [x] include own posts
+  - [ ] cli interface

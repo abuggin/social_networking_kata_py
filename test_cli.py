@@ -3,7 +3,6 @@ import unittest
 
 
 class TestCliFeed(unittest.TestCase):
-
     def test_link_message_to_user(self):
         feed = FeedCli()
         username = "John"
@@ -58,6 +57,24 @@ class TestCliFeed(unittest.TestCase):
         feed.post_message(followed_b, new_msg)
         res = feed.get_wall_for(follower)
         self.assertEqual([new_msg, old_msg_c, old_msg_b], res)
+
+    def test_get_wall_include_own_post(self):
+        feed = FeedCli()
+        own_message = "Message message message"
+        feed.post_message("A", own_message)
+        self.assertEqual([own_message], feed.get_wall_for("A"))
+
+    def test_get_wall_own_post_and_newest_order(self):
+        feed = FeedCli()
+        own_message = "Message message message"
+        feed.post_message("A", own_message)
+        feed.follow("A", "B")
+        B_msg = "it's your birthday"
+        feed.post_message("B", B_msg)
+        own_new_msg = "speechless"
+        feed.post_message("A", own_new_msg)
+        self.assertEqual([own_new_msg, B_msg, own_message], feed.get_wall_for("A"))
+
 
 if __name__ == "__main__":
     unittest.main()
